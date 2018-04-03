@@ -1,0 +1,9 @@
+<?php
+require_once('options.php');
+require_once(GJ_PATH_LOCAL . DIRECTORY_SEPARATOR . 'gojohnny.php');
+$page = TPage('go!Johnny - examples');
+$page->icon = '';
+$page->css = '';
+$page->js = '';
+$page->render();
+?>
