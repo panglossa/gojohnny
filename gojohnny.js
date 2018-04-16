@@ -61,12 +61,32 @@ function urlDecode(s){
 	return decodeURIComponent(s.replace( /\+/g, '%20' )).replace( /\%([0-9a-f]{2})/g, urlDecodeCharacter);
 	};
 
+function content(area, newval){
+	et = jQuery(area).prop('nodeName').toLowerCase();
+	if (
+		(et=='div')
+		||(et=='p')
+		||(et=='span')
+		) {
+		return html(area, newval);
+		}else{
+		return val(area, newval);
+		}
+	}
+
 function val(area, newval){
 	if (newval!=null){
 		jQuery(area).val(newval);
 		}
 	return jQuery(area).val();
 	}
+
+function html(area, newval){
+	if (newval!=null){
+		jQuery(area).html(newval);
+		}
+	return jQuery(area).html();
+	}	
 
 function include(filename){
 	//source: http://forums.digitalpoint.com/showthread.php?t=146094

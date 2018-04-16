@@ -640,7 +640,9 @@ foreach ($result as $row) {
 				$vals[":{$key}"] = $val;
 				}
 			$fields = implode(', ', $fields);
-			$prep = $this->pdo->prepare("UPDATE {$tablename} SET {$fields} WHERE {$condition};");
+			$querystring = "UPDATE {$tablename} SET {$fields} WHERE {$condition};";
+			//echo $querystring;
+			$prep = $this->pdo->prepare($querystring);
 			return $prep->execute($vals);
 			}
 		}
